@@ -50,3 +50,25 @@ This repo is a simple introduction to performing some essentials and simple func
   - npm run dev
   - Go to chrome
     - https://localhost:3000
+
+
+
+
+
+We've prepared a doc for useful links
+https://www.notion.so/superteamdao/March-2024-Solana-Hackathon-bfc29dcd58c143af840d7ef1d2f03c43?pvs=4  
+
+Pitch deck format (by YC): 
+https://www.ycombinator.com/library/2u-how-to-build-your-seed-round-pitch-deck  
+
+Previous hackathon winners: (with full links to presentation decks, pitch video recording, social media links etc) 
+https://solana.com/news/solana-grizzlython-winners 
+https://solana.com/news/solana-hyperdrive-hackathon-winners 
+
+Last year in 2023, Malaysia had 2 global prize winners, winning 30k USD and 15k USD per team respectively:
+ https://twitter.com/SuperteamMY/status/1720450422836797695   1st prize in consumer category: (Malaysian winner)
+https://hyperdrive.solana.com/projects/explore?nameQuery=sollinked
+
+3rd place in AI category: (Malaysian winner)
+https://hyperdrive.solana.com/projects/explore?nameQuery=byte+in
+
