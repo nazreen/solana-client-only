@@ -40,20 +40,15 @@ This repo is a simple introduction to performing some essentials and simple func
   - Or, via NodeJS (Get the latest LTS version)
     - https://nodejs.org/en/download/
 
-- Clone the repo
-
-  - Repo: https://github.com/jup-ag/apu-solana-hands-on
-  - `git clone https://github.com/jup-ag/apu-solana-hands-on.git ./`
+- Clone this repo: `git clone https://github.com/nazreen/solana-client-only.git`
 
 - Install dependencies and start the server
   - npm install
   - npm run dev
-  - Go to chrome
-    - https://localhost:3000
+  - open in browser: https://localhost:3000
 
 
-
-
+## Hackathon Resources 
 
 We've prepared a doc for useful links
 https://www.notion.so/superteamdao/March-2024-Solana-Hackathon-bfc29dcd58c143af840d7ef1d2f03c43?pvs=4  
@@ -66,7 +61,7 @@ https://solana.com/news/solana-grizzlython-winners
 https://solana.com/news/solana-hyperdrive-hackathon-winners 
 
 Last year in 2023, Malaysia had 2 global prize winners, winning 30k USD and 15k USD per team respectively:
- https://twitter.com/SuperteamMY/status/1720450422836797695   1st prize in consumer category: (Malaysian winner)
+ https://twitter.com/SuperteamMY/status/1720450422836797695 1st prize in consumer category: (Malaysian winner)
 https://hyperdrive.solana.com/projects/explore?nameQuery=sollinked
 
 3rd place in AI category: (Malaysian winner)

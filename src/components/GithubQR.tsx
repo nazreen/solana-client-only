@@ -1,9 +1,12 @@
 import React from "react";
+// import qrImage from 
+
+const repoUrl = "https://github.com/nazreen/solana-client-only";
 
 const GithubQR = () => {
   return (
     <a
-      href="https://github.com/dicksonpys/apu-solana-hands-on"
+      href={repoUrl}
       className="lg:fixed bottom-2 right-5 group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
       target="_blank"
       rel="noopener noreferrer"
@@ -19,7 +22,7 @@ const GithubQR = () => {
         <img
           width={200}
           height={200}
-          src={"/apu-solana-hands-on.png"}
+          src={"/repo-qr.png"}
           alt="Github Link to APU Solana Hands On"
         />
       </div>

@@ -92,14 +92,14 @@ function Home() {
     >
       <Header />
 
-      <div className="flex-1">
-        <div className="border rounded-lg p-2 bg-slate-400 flex items-center space-x-3 mt-5">
+      <div className="flex-1 w-screen max-w-2xl">
+        <div className="border rounded-lg p-2 bg-white flex items-center space-x-3 mt-5">
           <button
             disabled={task === 0}
             onClick={() => {
               setTask((task) => task - 1);
             }}
-            className="backdrop-blur-2xl rounded-xl px-4 py-2 bg-green-500 disabled:opacity-60"
+            className="backdrop-blur-2xl text-white rounded-xl px-4 py-2 bg-gray-800 disabled:opacity-60"
           >
             Prev task
           </button>
@@ -109,7 +109,7 @@ function Home() {
             onClick={() => {
               setTask((task) => task + 1);
             }}
-            className="backdrop-blur-2xl rounded-xl px-4 py-2 bg-green-500 disabled:opacity-60"
+            className="backdrop-blur-2xl rounded-xl px-4 py-2 bg-black text-white disabled:opacity-60"
           >
             Next task
           </button>
