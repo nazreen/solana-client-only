@@ -1,5 +1,5 @@
 import Wallet from "@/components/Wallet";
-import { Connection, Keypair } from "@solana/web3.js";
+import { Connection, Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import React, { useState } from "react";
 
 export const task = "Lesson 2 - Airdrop. Fund your wallet.";
@@ -19,12 +19,19 @@ const Exercise2Airdropping: React.FC<{
 
     try {
       /** Exercise 2, use the connection object to request an airdrop to your Keypair */
+
       const txid = await connection.requestAirdrop(
         keypair?.publicKey,
-        1_000_000_000
+        1 * LAMPORTS_PER_SOL
       );
+      const latestBlockhash = await connection.getLatestBlockhash();
 
-      const result = await connection.confirmTransaction(txid);
+      const result = await connection.confirmTransaction({
+        blockhash: latestBlockhash.blockhash,
+        lastValidBlockHeight: latestBlockhash.lastValidBlockHeight,
+        signature: txid,
+      });
+
       /** End of exercise 2 */
 
       if ("err" in result) {
