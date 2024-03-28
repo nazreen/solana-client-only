@@ -15,10 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
           url: 'https://jup.ag',
           iconUrls: ['https://jup.ag/favicon.ico'],
         },
-        // notificationCallback: WalletNotification,
-        // walletlistExplanation: {
-        //   href: "https://station.jup.ag/docs/additional-topics/wallet-list",
-        // },
       }}
     >
       <Component {...pageProps} />

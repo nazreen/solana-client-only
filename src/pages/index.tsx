@@ -19,10 +19,6 @@ const Separator = () => {
   return <div className="border-b my-4 border-b-black/10" />;
 };
 
-export const WRAPPED_SOL_MINT = new PublicKey(
-  "So11111111111111111111111111111111111111112"
-);
-
 function Home() {
   const [storedKeypair, setKeypair] = useLocalStorage<Keypair | null>(
     "local-keypair",
@@ -30,6 +26,16 @@ function Home() {
   );
 
   const [task, setTask] = useLocalStorage("task-index", 0);
+
+  const keypair = useMemo(() => {
+    if (storedKeypair) {
+      const sKeys = Uint8Array.from(
+        Object.values((storedKeypair as any)._keypair.secretKey) as any
+      );
+      return Keypair.fromSecretKey(sKeys);
+    }
+    return storedKeypair;
+  }, [storedKeypair]);
 
   // DO NOT DO THIS IN PRODUCTION, for demo purposes only
   useEffect(() => {
@@ -42,17 +48,7 @@ function Home() {
       setKeypair(regenKeypair);
     }
     // On startup only
-  }, []);
-
-  const keypair = useMemo(() => {
-    if (storedKeypair) {
-      const sKeys = Uint8Array.from(
-        Object.values((storedKeypair as any)._keypair.secretKey) as any
-      );
-      return Keypair.fromSecretKey(sKeys);
-    }
-    return storedKeypair;
-  }, [storedKeypair]);
+  }, [keypair, setKeypair]);
 
   const connection = useMemo(() => new Connection(DEVNET_URL, "confirmed"), []);
 
@@ -88,11 +84,11 @@ function Home() {
 
   return (
     <main
-      className={`flex max-w-screen overflow-x-hidden min-h-screen flex-col items-center justify-center p-4 lg:p-24 ${inter.className}`}
+      className={`flex max-w-full overflow-x-hidden min-h-screen flex-col items-center justify-center p-4 lg:p-24 ${inter.className}`}
     >
       <Header />
 
-      <div className="flex-1 w-screen max-w-2xl">
+      <div className="flex-1 w-full max-w-2xl">
         <div className="border rounded-lg p-2 bg-white flex items-center space-x-3 mt-5">
           <button
             disabled={task === 0}
