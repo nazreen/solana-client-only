@@ -43,7 +43,6 @@ function Home() {
       const sKeys = Uint8Array.from(
         Object.values((keypair as any)._keypair.secretKey) as any
       );
-      console.log({ sKeys });
       const regenKeypair = Keypair.fromSecretKey(sKeys);
       setKeypair(regenKeypair);
     }
