@@ -13,8 +13,7 @@
 
 # Concepts
 
-- Commitment (processed, confirmed, confirmed)
-- transactiond id (transaction signature)
+- Subscribing to events
 
 ## Ref
 https://solanacookbook.com/references/local-development.html#subscribing-to-events

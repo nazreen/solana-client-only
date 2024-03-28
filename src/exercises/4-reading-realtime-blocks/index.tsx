@@ -12,7 +12,7 @@ const Exercise4ReadingRealtimeBlocks: React.FC<{
 
   useEffect(() => {
     /** Exercise 4: Use the websocket listener from the connection object to fetch the latest block */
-
+    
     /** End of exercise 4 */
   }, [connection]);
 
@@ -28,3 +28,9 @@ const Exercise4ReadingRealtimeBlocks: React.FC<{
 };
 
 export default Exercise4ReadingRealtimeBlocks;
+
+
+// const subId = connection.onRootChange(setCurrentBlock);
+//     return () => {
+//       connection.removeRootChangeListener(subId);
+//     };
