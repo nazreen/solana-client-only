@@ -2,6 +2,8 @@
 
 This repo is a simple introduction to performing some essentials and simple functionality in Solana Blockchain.
 
+This is a fork of the Jupiter repo at https://github.com/jup-ag/apu-solana-hands-on
+
 ## Getting started (Codespace)
 
 - go to https://github.com/codespaces/new
