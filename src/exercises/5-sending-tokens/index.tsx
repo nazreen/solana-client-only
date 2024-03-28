@@ -24,40 +24,20 @@ const Exercise5SendingTokens: React.FC<{
     if (!keypair?.publicKey) return;
 
     /** Exercise 5.1: To verify if the PublicKey is valid */
-    try {
-      new PublicKey(recipient);
-    } catch (error) {
-      alert("Invalid Public Key");
-      return;
-    }
+
     /** End of exercise 5.1 section */
 
     setIsSending(true);
 
+
+    try {
     /** Exercise 5.2: To Craft a Transaction that sends SOL to the recipient
      * craft a TransactionInstruction
      * craft a TransactionMessage
      * craft a VersionedTransaction
      * Finally, send the transaction
      * */
-    try {
-      const ix = SystemProgram.transfer({
-        fromPubkey: keypair?.publicKey,
-        toPubkey: new PublicKey(recipient),
-        lamports: amountToTransfer,
-      });
-
-      const { blockhash } = await connection.getLatestBlockhash();
-      const messageV0 = new TransactionMessage({
-        payerKey: keypair.publicKey,
-        recentBlockhash: blockhash,
-        instructions: [ix],
-      }).compileToV0Message();
-
-      const verTx = new VersionedTransaction(messageV0);
-      verTx.sign([keypair]);
-      const txid = await connection.sendTransaction(verTx);
-      setTxid(txid);
+      
 
       /** End of exercise 5.2 section */
     } catch (error) {

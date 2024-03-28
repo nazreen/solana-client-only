@@ -20,17 +20,6 @@ const Exercise2Airdropping: React.FC<{
     try {
       /** Exercise 2, use the connection object to request an airdrop to your Keypair */
 
-      const txid = await connection.requestAirdrop(
-        keypair?.publicKey,
-        1 * LAMPORTS_PER_SOL
-      );
-      const latestBlockhash = await connection.getLatestBlockhash();
-
-      const result = await connection.confirmTransaction({
-        blockhash: latestBlockhash.blockhash,
-        lastValidBlockHeight: latestBlockhash.lastValidBlockHeight,
-        signature: txid,
-      });
 
       /** End of exercise 2 */
 
