@@ -46,10 +46,3 @@ const Exercise1GenerateKeypairs: React.FC<{
 };
 
 export default Exercise1GenerateKeypairs;
-
-/** Answers
-const generateKeypair = () => {
-  const newKP = Keypair.generate();
-  setKeypair(newKP);
-};
-*/

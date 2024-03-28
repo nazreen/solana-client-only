@@ -134,32 +134,3 @@ const Exercise5SendingTokens: React.FC<{
 };
 
 export default Exercise5SendingTokens;
-
-/** Answers 1
-try {
-  new PublicKey(recipient);
-} catch (error) {
-  alert("Invalid Public Key");
-  return;
-}
-*/
-
-/** Answers 2
-const ix = SystemProgram.transfer({
-  fromPubkey: keypair?.publicKey,
-  toPubkey: new PublicKey(recipient),
-  lamports: amountToTransfer,
-});
-
-const { blockhash } = await connection.getLatestBlockhash();
-const messageV0 = new TransactionMessage({
-  payerKey: keypair.publicKey,
-  recentBlockhash: blockhash,
-  instructions: [ix],
-}).compileToV0Message();
-
-const verTx = new VersionedTransaction(messageV0);
-verTx.sign([keypair]);
-const txid = await connection.sendTransaction(verTx);
-setTxid(txid);
-*/

@@ -31,10 +31,3 @@ const Exercise4ReadingRealtimeBlocks: React.FC<{
 };
 
 export default Exercise4ReadingRealtimeBlocks;
-
-/** Answers
-const id = connection.onRootChange(setCurrentBlock);
-  return () => {
-  connection.removeRootChangeListener(id);
-};
-*/

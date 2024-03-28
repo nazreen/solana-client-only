@@ -93,11 +93,3 @@ const Exercise2Airdropping: React.FC<{
 };
 
 export default Exercise2Airdropping;
-
-/** Answers
-const txid = await connection.requestAirdrop(
-  keypair?.publicKey,
-  1_000_000_000
-);
-const result = await connection.confirmTransaction(txid);
-*/

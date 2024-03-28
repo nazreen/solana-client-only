@@ -43,8 +43,3 @@ const Exercise3GettingBalance: React.FC<{
 };
 
 export default Exercise3GettingBalance;
-
-/** Answers
-const solBalance = await connection.getBalance(keypair.publicKey);
-setBalance((solBalance / 10 ** 9).toFixed(9));
-*/
