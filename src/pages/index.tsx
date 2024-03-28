@@ -48,7 +48,8 @@ function Home() {
       setKeypair(regenKeypair);
     }
     // On startup only
-  }, [keypair, setKeypair]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const connection = useMemo(() => new Connection(DEVNET_URL, "confirmed"), []);
 
