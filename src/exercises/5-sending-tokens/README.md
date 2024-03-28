@@ -6,15 +6,15 @@
 - Example: send Solana to someone else, sending NFT, interact with Solana apps.
 
 ## Function
-`SystemProgram.transfer({ fromPubkey: PublicKey; lamports: number | bigint; toPubkey: PublicKey; })` is used to craft a transaction.
 
+`SystemProgram.transfer({ fromPubkey: PublicKey; lamports: number | bigint; toPubkey: PublicKey; })`returns an instruction.
 `Connection.sendTransaction(transaction, signers)` is used to send transaction
-
 
 # Concepts
 
 - System Program
-- Transaction
+- Instruction, TransactionMessage, VersionedTransaction
+- Signing
 
 
 ## Ref

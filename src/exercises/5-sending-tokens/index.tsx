@@ -24,7 +24,12 @@ const Exercise5SendingTokens: React.FC<{
     if (!keypair?.publicKey) return;
 
     /** Exercise 5.1: To verify if the PublicKey is valid */
-
+    try {
+      new PublicKey(recipient);
+    } catch (error) {
+      alert("Invalid Public Key / Address")
+      return;
+    }
     /** End of exercise 5.1 section */
 
     setIsSending(true);
@@ -32,12 +37,32 @@ const Exercise5SendingTokens: React.FC<{
 
     try {
     /** Exercise 5.2: To Craft a Transaction that sends SOL to the recipient
-     * craft a TransactionInstruction
-     * craft a TransactionMessage
-     * craft a VersionedTransaction
-     * Finally, send the transaction
+     * TransactionInstruction -> TransactionMessage -> VersionedTransaction -> send the transaction
      * */
-      
+
+    const ix = SystemProgram.transfer({
+      fromPubkey: keypair?.publicKey,
+      toPubkey: new PublicKey(recipient),
+      lamports: amountToTransfer,
+    });
+
+    const { blockhash } = await connection.getLatestBlockhash();
+
+    const txnMessage = new TransactionMessage({
+      payerKey: keypair.publicKey,
+      recentBlockhash: blockhash,
+      instructions: [ix],
+    });
+    
+    const v0txnMessage = txnMessage.compileToV0Message();
+
+    const verTxn = new VersionedTransaction(v0txnMessage);
+
+    verTxn.sign([keypair]);
+
+    const txId = await connection.sendTransaction(verTxn);
+    setTxid(txId);
+
 
       /** End of exercise 5.2 section */
     } catch (error) {
