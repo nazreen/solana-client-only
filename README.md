@@ -2,19 +2,11 @@
 
 This repo is a simple introduction to performing some essentials and simple functionality in Solana Blockchain.
 
-<p align="center">
-<img src="https://jup.ag/svg/jupiter-logo.svg" width="200" height="200" />
-</p>
-
-<p align="center">
-<a href="https://jup.ag">Jupiter Aggregator</a>
-</p>
-
 ## Getting started (Codespace)
 
 - go to https://github.com/codespaces/new
 
-  - insert `jup-ag/apu-solana-hands-on`
+  - insert `nazreen/solana-client-only`
 
 - Install dependencies and start the server
   - `npm install`
