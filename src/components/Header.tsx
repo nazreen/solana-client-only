@@ -1,4 +1,3 @@
-import { UnifiedWalletButton } from "@jup-ag/wallet-adapter";
 import React from "react";
 
 const Header = () => {
