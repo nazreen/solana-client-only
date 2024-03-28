@@ -59,7 +59,7 @@ const Exercise2Airdropping: React.FC<{
                   disabled
                   className="cursor-not-allowed opacity-50 text-black backdrop-blur-2xl rounded-xl px-4 py-2 bg-white"
                 >
-                  Already Airdropped
+                  Airdrop Done
                 </button>
               );
             }

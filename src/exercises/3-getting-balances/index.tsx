@@ -1,5 +1,5 @@
 import Wallet from "@/components/Wallet";
-import { Keypair, Connection } from "@solana/web3.js";
+import { Keypair, Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import React, { useEffect, useState } from "react";
 
 export const task = "Lesson 3 - Get your wallet balance.";
@@ -8,6 +8,7 @@ const Exercise3GettingBalance: React.FC<{
   keypair: Keypair | null;
   connection: Connection;
 }> = ({ keypair, connection }) => {
+  const [loading, setLoading] = useState(true);
   const [balance, setBalance] = useState<string>("0");
   useEffect(() => {
     const fetchSOLBalance = async () => {
@@ -15,15 +16,17 @@ const Exercise3GettingBalance: React.FC<{
 
       try {
         /** Exercise 3, use the connection object to fetch the account's balance */
-
+        const latestBalance = await connection.getBalance(keypair?.publicKey);
+        setBalance((latestBalance / LAMPORTS_PER_SOL).toFixed(6));
+        setLoading(false);
         /** End of exercise 3 */
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchSOLBalance();
-    const intervalId = setInterval(fetchSOLBalance, 2_000);
+    fetchSOLBalance(); // run once initially
+    const intervalId = setInterval(fetchSOLBalance, 5_000);
 
     return () => {
       clearInterval(intervalId);
@@ -35,7 +38,7 @@ const Exercise3GettingBalance: React.FC<{
       {keypair && <Wallet keypair={keypair} />}
       <div className="mt-6">
         <p className="font-semibold">Balance</p>
-        <div className="mt-4">{balance} SOL</div>
+        <div className="mt-4">{loading ? "(loading)" : balance} SOL</div>
       </div>
     </>
   );
