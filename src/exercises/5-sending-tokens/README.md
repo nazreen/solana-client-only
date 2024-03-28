@@ -11,6 +11,12 @@
 `Connection.sendTransaction(transaction, signers)` is used to send transaction
 
 
+# Concepts
+
+- System Program
+- Transaction
+
+
 ## Ref
 https://solanacookbook.com/references/basic-transactions.html#how-to-send-sol
 https://solana.com/docs/core/transactions/versions#how-create-a-versioned-transaction
