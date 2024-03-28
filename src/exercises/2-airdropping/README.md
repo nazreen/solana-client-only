@@ -15,6 +15,7 @@ https://solana-labs.github.io/solana-web3.js/classes/Connection.html#requestAird
 
 - SOLs
 - lamports
+- Connection (see `src/pages/index.tsx`)
 
 # Troubleshoot
 If you can't didnt receive SOL. Can go to https://faucet.quicknode.com/solana/devnet

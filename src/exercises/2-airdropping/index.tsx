@@ -19,7 +19,7 @@ const Exercise2Airdropping: React.FC<{
 
     try {
       /** Exercise 2, use the connection object to request an airdrop to your Keypair */
-
+      
 
       /** End of exercise 2 */
 

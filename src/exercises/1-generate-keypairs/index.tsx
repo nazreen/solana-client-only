@@ -9,7 +9,6 @@ const Exercise1GenerateKeypairs: React.FC<{
 }> = ({ keypair, setKeypair }) => {
   /** Exercise 1, use the Keypair class to generate a Keypair for yourself */
   // hint: create a function called generateKeypair
-  
 
   /** End of exercise 1 */
 

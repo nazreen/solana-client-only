@@ -13,7 +13,6 @@ To get balance:
 # Concepts
 
 - RPC
-- Connection (see `src/pages/index.tsx`)
 
 ## References
 https://solanacookbook.com/references/accounts.html#how-to-get-account-balance
