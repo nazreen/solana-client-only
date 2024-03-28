@@ -11,6 +11,12 @@ import React, { useState } from "react";
 
 export const task = "Lesson 5 - Create a transaction to send SOL";
 
+const validatePublicKey = (pkString: string) => {
+  /** Exercise 5.1: To verify if the PublicKey is valid */
+
+  /** End of exercise 5.1 section */
+}
+
 const Exercise5SendingTokens: React.FC<{
   keypair: Keypair | null;
   connection: Connection;
@@ -20,49 +26,19 @@ const Exercise5SendingTokens: React.FC<{
   const [amountToTransfer, setAmountToTransfer] = useState<number>(0);
   const [isSending, setIsSending] = useState<boolean>(false);
 
+
+
   const onClickTransfer = async () => {
     if (!keypair?.publicKey) return;
 
-    /** Exercise 5.1: To verify if the PublicKey is valid */
-    try {
-      new PublicKey(recipient);
-    } catch (error) {
-      alert("Invalid Public Key / Address")
-      return;
-    }
-    /** End of exercise 5.1 section */
+    validatePublicKey(recipient);
 
     setIsSending(true);
-
 
     try {
     /** Exercise 5.2: To Craft a Transaction that sends SOL to the recipient
      * TransactionInstruction -> TransactionMessage -> VersionedTransaction -> send the transaction
      * */
-
-    const ix = SystemProgram.transfer({
-      fromPubkey: keypair?.publicKey,
-      toPubkey: new PublicKey(recipient),
-      lamports: amountToTransfer,
-    });
-
-    const { blockhash } = await connection.getLatestBlockhash();
-
-    const txnMessage = new TransactionMessage({
-      payerKey: keypair.publicKey,
-      recentBlockhash: blockhash,
-      instructions: [ix],
-    });
-    
-    const v0txnMessage = txnMessage.compileToV0Message();
-
-    const verTxn = new VersionedTransaction(v0txnMessage);
-
-    verTxn.sign([keypair]);
-
-    const txId = await connection.sendTransaction(verTxn);
-    setTxid(txId);
-
 
       /** End of exercise 5.2 section */
     } catch (error) {
@@ -139,3 +115,37 @@ const Exercise5SendingTokens: React.FC<{
 };
 
 export default Exercise5SendingTokens;
+
+
+// 5.1
+// try {
+//   new PublicKey(pkString);
+// } catch (error) {
+//   alert("Invalid Public Key / Address")
+//   return;
+// }
+
+// 5.2
+
+// const ix = SystemProgram.transfer({
+//   fromPubkey: keypair?.publicKey,
+//   toPubkey: new PublicKey(recipient),
+//   lamports: amountToTransfer,
+// });
+
+// const { blockhash } = await connection.getLatestBlockhash();
+
+// const txnMessage = new TransactionMessage({
+//   payerKey: keypair.publicKey,
+//   recentBlockhash: blockhash,
+//   instructions: [ix],
+// });
+
+// const v0txnMessage = txnMessage.compileToV0Message();
+
+// const verTxn = new VersionedTransaction(v0txnMessage);
+
+// verTxn.sign([keypair]);
+
+// const txId = await connection.sendTransaction(verTxn);
+// setTxid(txId);
