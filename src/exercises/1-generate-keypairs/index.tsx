@@ -8,7 +8,7 @@ const Exercise1GenerateKeypairs: React.FC<{
   setKeypair: Dispatch<SetStateAction<Keypair | null>>;
 }> = ({ keypair, setKeypair }) => {
   /** Exercise 1, use the Keypair class to generate a Keypair for yourself */
-  // hint: create a function called generateKeypair
+  const generateKeypair = () => {};
 
   /** End of exercise 1 */
 
