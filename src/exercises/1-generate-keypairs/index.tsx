@@ -47,9 +47,9 @@ const Exercise1GenerateKeypairs: React.FC<{
           </a>
         </div>
       ) : null}
-      <div className="my-10 prose">
+      {/* <div className="my-10 prose">
         <Markdown>{markdown}</Markdown>
-      </div>
+      </div> */}
     </div>
   );
 };
