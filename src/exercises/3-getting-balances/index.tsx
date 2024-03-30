@@ -20,9 +20,7 @@ const Exercise3GettingBalance: React.FC<{
 
       try {
         /** Exercise 3, use the connection object to fetch the account's balance */
-        const latestBalance = await connection.getBalance(keypair?.publicKey);
-        setBalance((latestBalance / LAMPORTS_PER_SOL).toFixed(6));
-        setLoading(false);
+
         /** End of exercise 3 */
       } catch (error) {
         console.error(error);
@@ -50,3 +48,7 @@ const Exercise3GettingBalance: React.FC<{
 };
 
 export default Exercise3GettingBalance;
+
+// const latestBalance = await connection.getBalance(keypair?.publicKey);
+// setBalance((latestBalance / LAMPORTS_PER_SOL).toFixed(6));
+// setLoading(false);
