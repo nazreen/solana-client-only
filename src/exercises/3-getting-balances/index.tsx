@@ -2,6 +2,10 @@ import Wallet from "@/components/Wallet";
 import { Keypair, Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import React, { useEffect, useState } from "react";
 
+import Guide from "@/components/Guide";
+
+const taskNumber = 3;
+
 export const task = "Lesson 3 - Get your wallet balance.";
 
 const Exercise3GettingBalance: React.FC<{
@@ -40,6 +44,7 @@ const Exercise3GettingBalance: React.FC<{
         <p className="font-semibold">Balance</p>
         <div className="mt-4">{loading ? "(loading)" : balance} SOL</div>
       </div>
+      <Guide taskNumber={taskNumber} />
     </>
   );
 };

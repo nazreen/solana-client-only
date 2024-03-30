@@ -8,6 +8,9 @@ import {
   VersionedTransaction,
 } from "@solana/web3.js";
 import React, { useState } from "react";
+import Guide from "@/components/Guide";
+
+const taskNumber = 5;
 
 export const task = "Lesson 5 - Create a transaction to send SOL";
 
@@ -110,6 +113,7 @@ const Exercise5SendingTokens: React.FC<{
           ) : null}
         </div>
       </div>
+      <Guide taskNumber={taskNumber} />
     </>
   );
 };

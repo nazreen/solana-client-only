@@ -1,6 +1,9 @@
 import Wallet from "@/components/Wallet";
 import { Connection, Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import React, { useState } from "react";
+import Guide from "@/components/Guide";
+
+const taskNumber = 2;
 
 export const task = "Lesson 2 - Airdrop. Fund your wallet.";
 
@@ -76,6 +79,7 @@ const Exercise2Airdropping: React.FC<{
           })()}
         </div>
       </div>
+      <Guide taskNumber={taskNumber} />
     </>
   );
 };

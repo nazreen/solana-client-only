@@ -1,8 +1,8 @@
 import { Keypair } from "@solana/web3.js";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import Markdown from "react-markdown";
-import axios from 'axios';
-import { useState } from "react";
+import Guide from "@/components/Guide";
+
+const taskNumber = 1;
 
 export const task = "Lesson 1 - Keypair.";
 
@@ -10,10 +10,8 @@ const Exercise1GenerateKeypairs: React.FC<{
   keypair: Keypair | null;
   setKeypair: Dispatch<SetStateAction<Keypair | null>>;
 }> = ({ keypair, setKeypair }) => {
-  const [ markdown, setMarkdown ] = useState("");
-  useEffect(() => {
-    axios.get('./guides/1.md').then(res => setMarkdown(res.data));
-  });
+
+
   /** Exercise 1, use the Keypair class to generate a Keypair for yourself */
   const generateKeypair = () => {};
   
@@ -47,9 +45,7 @@ const Exercise1GenerateKeypairs: React.FC<{
           </a>
         </div>
       ) : null}
-      {/* <div className="my-10 prose">
-        <Markdown>{markdown}</Markdown>
-      </div> */}
+      <Guide taskNumber={taskNumber} />
     </div>
   );
 };

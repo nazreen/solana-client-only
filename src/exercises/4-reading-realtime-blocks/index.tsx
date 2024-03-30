@@ -2,6 +2,10 @@ import Wallet from "@/components/Wallet";
 import { Connection, Keypair } from "@solana/web3.js";
 import React, { useEffect, useState } from "react";
 
+import Guide from "@/components/Guide";
+
+const taskNumber = 4;
+
 export const task = "Lesson 4 - Understanding websocket";
 
 const Exercise4ReadingRealtimeBlocks: React.FC<{
@@ -23,6 +27,7 @@ const Exercise4ReadingRealtimeBlocks: React.FC<{
         <p className="font-semibold">Current block</p>
         <div className="mt-4">{currentBlock}</div>
       </div>
+      <Guide taskNumber={taskNumber} />
     </>
   );
 };
